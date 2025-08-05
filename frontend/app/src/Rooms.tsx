@@ -22,13 +22,13 @@ function Rooms() {
   const userId = Number(localStorage.getItem('token'));
 
   useEffect(() => {
-    fetch('http://localhost:3000/rooms')
+    fetch(`http://localhost:${import.meta.env.VITE_BACKEND_PORT}/rooms`)
       .then((res) => res.json())
       .then(setRooms)
       .catch(console.error);
 
     if (userId) {
-      fetch(`http://localhost:3000/booking/${userId}`)
+      fetch(`http://localhost:${import.meta.env.VITE_BACKEND_PORT}/booking/${userId}`)
         .then((res) => res.json())
         .then(setBookings)
         .catch(console.error);
@@ -65,7 +65,7 @@ function Rooms() {
     };
 
     try {
-      const res = await fetch('http://localhost:3000/booking', {
+      const res = await fetch(`http://localhost:${import.meta.env.VITE_BACKEND_PORT}/booking`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
@@ -100,7 +100,7 @@ function Rooms() {
     };
 
     try {
-      const res = await fetch('http://localhost:3000/booking/cancel', {
+      const res = await fetch(`http://localhost:${import.meta.env.VITE_BACKEND_PORT}/booking/cancel`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),

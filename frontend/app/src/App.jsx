@@ -14,7 +14,7 @@ function App() {
   }, [navigate]);
 
   const login = async () => {
-    const res = await fetch('http://localhost:3000/auth/login', {
+    const res = await fetch(`http://localhost:${import.meta.env.VITE_BACKEND_PORT}/auth/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

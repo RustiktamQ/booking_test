@@ -10,7 +10,7 @@ dont forget customize .env file for your local env!
 
 `/remote-server/.env`
 
-Tables and example data will be created automatically
+Tables and example data will be created automatically after connect to db
 
 ## Techologies
 
@@ -19,6 +19,7 @@ Tables and example data will be created automatically
 - **PostgreSQL**
 - **Sequelize** 
 - **Express** — `remote-server`
+- **React**
 
 
 # Project setup
@@ -26,12 +27,19 @@ Tables and example data will be created automatically
 
 `Base API`
 ```bash
+$ cd backend
 $ npm install
 ```
 
 `Remote API simulate`
 ```bash
-$ cd remote-server
+$ cd backend/remote-server
+$ npm install
+```
+
+`Frontend`
+```bash
+$ cd frontend/app
 $ npm install
 ```
 
@@ -39,6 +47,7 @@ $ npm install
 
 `Base API`
 ```bash
+$ cd backend
 $ npm run start
 ```
 
@@ -46,4 +55,10 @@ $ npm run start
 ```bash
 $ cd remote-server
 $ npm run start
+```
+
+`Frontend`
+```bash
+$ cd frontend/app
+$ npm run dev
 ```
